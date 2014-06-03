@@ -17,7 +17,5 @@ nnoremap <silent> <Plug>SwizzleChar :<C-U>call swizzle#Swizzle(v:count)<CR>
 
 if !exists("g:swizzle_no_mappings") || !g:swizzle_no_mappings
   nmap gs <Plug>SwizzleChar
-else
-  echom "hello"
 endif
 " }}}
