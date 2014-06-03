@@ -21,8 +21,7 @@ Then type the following in vim:
 If you use [pathogen](https://github.com/tpope/vim-pathogen), then issue the following commands:
 
     cd ~/.vim/bundle && git clone git://github.com/frasercrmck/swizzle.vim.git
-Don't forget to update the help with:
-    :helptags
+Don't forget to update the help with: `:helptags`
 
 
 ## Customisation
