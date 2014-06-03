@@ -1,0 +1,88 @@
+*swizzle.vim* - swizzle characters under the cursor
+
+Author:  Fraser Cormack <frasercrmck@gmail.com>
+License: This file is placed in the public domain.
+
+==============================================================================
+INTRODUCTION                                                           *swizzle*
+
+This plugin swizzles the character under the cursor. It essentially cycles the 
+character under the cursor through a customisable sequence of permutations.
+Please see |swizzle-maps| for a more in-depth look into the functionality.
+
+==============================================================================
+USAGE                                                            *swizzle-usage*
+
+The only mapping defined by this plugin is 'gs' (think "go swizzle"). This
+will take the character under the cursor and replace it with the next
+character in its swizzle sequence.
+
+For example, assume the swizzle sequence of ['x', 'y', 'z', 'w'] ('*' denotes
+the cursor position):
+
+    Old text      Command      New text~
+    *x_var        gs           *y_var
+    *y_var        gs           *z_var
+    *z_var        gs           *w_var
+    *w_var        gs           *x_var
+
+The case of the character under the cursor is preserved. That is, given a
+swizzle sequence ['a', 'b']: 'a' will be swizzled to 'b', and 'A' will be
+swizzled to 'B'.
+
+==============================================================================
+REPEATING                                                       *swizzle-repeat*
+
+Having repeat.vim <https://github.com/tpope/vim-repeat> is recommended, as it 
+will allow you to use the dot key (period, full-stop, '.') to repeat the last 
+swizzle.
+
+For example, assume the swizzle sequnce of ['x', 'y', 'z', 'w'] ('*' denotes
+the cursor position):
+
+    Old text      Command      New text ~
+    x_var         gs           y_var
+    y_var          .           z_var
+    z_var         2.           x_var
+
+==============================================================================
+OPTIONS                                                        *swizzle-options*
+
+                                                         *g:swizzle_no_mappings*
+Overrides the default mappings provided by this plugin. Default: 0. Example: >
+  let g:swizzle_no_mappings = 1
+<
+You can then define your own mapping. Example: >
+  nmap cs <Plug>SwizzleChar
+
+Note: 'cs' sounds like a good mapping (character swizzle), but surround.vim 
+took that one. Early birds, and all that.
+
+                                                          *g:swizzle_sequences*
+The list of swizzles sequences to use. Its format is a list of lists.
+Default: [['x', 'y', 'z', 'w'], ['r', 'g', 'b', 'a']]. Example: >
+  let g:swizzle_lists = [['a', 'b', 'c']]
+<
+Note: having a character repeat in a swizzle sequence is a bad idea and will
+have unintended consequences, as it would be ambiguous which character to 
+swizzle to. The first character in the swizzle sequence will be the one 
+picked. Example: >
+  let g:swizzle_lists = [['a', 'b', 'a', 'c']]
+<
+This sequence will swizzle 'a' -> 'b' -> 'a' -> 'b' and never hit 'c'.
+
+Similarly, having a character repeated across all swizzle
+sequences will result in only the first being chosen. Example: >
+  let g:swizzle_lists = [['a', 'b', 'c'], ['a', 'e', 'i', 'o', 'u']]
+<
+This sequence will only ever swizzle 'a' -> 'b' -> 'c' as described in the
+first sequence; 'a' will never be swizzled to 'e' as defined in the second
+sequence.
+
+==============================================================================
+LICENSE                                                        *swizzle-lisence*
+
+This plugin is distributed under the same license as Vim iteself. See
+|license| for more information.
+
+  vim:tw=78:fo=tcq2:ft=help:norl:
