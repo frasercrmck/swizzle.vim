@@ -80,7 +80,7 @@ first sequence; 'a' will never be swizzled to 'e' as defined in the second
 sequence.
 
 ==============================================================================
-LICENSE                                                        *swizzle-lisence*
+LICENSE                                                        *swizzle-license*
 
 This plugin is distributed under the same license as Vim iteself. See
 |license| for more information.
