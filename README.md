@@ -13,10 +13,10 @@ as you can then use `.` to re-swizzle characters.
 
 If you use [Vundle](https://github.com/gmarik/Vundle.vim), add these lines to your `.vimrc`:
 
-    Bundle 'frasercrmck/swizzle.vim'
+    Plugin 'frasercrmck/swizzle.vim'
 Then type the following in vim:
 
-    :BundleInstall
+    :PluginInstall
 
 If you use [pathogen](https://github.com/tpope/vim-pathogen), then issue the following commands:
 
