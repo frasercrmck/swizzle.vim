@@ -15,7 +15,7 @@ let g:loaded_swizzle = 1
 nnoremap <silent> <Plug>SwizzleChar :<C-U>call swizzle#Swizzle(v:count)<CR>
                                     \:silent! call repeat#set("\<Plug>SwizzleChar", v:count)<CR>
 
-if !exists("g:swizzle_no_mappings") || !g:swizzle_no_mappings
-  nnoremap gs <Plug>SwizzleChar
-endif
+let g:swzl_swizzle_key = get( g:, 'swzl_swizzle_key', 'gs' )
+
+execute "nmap <silent> " . g:swzl_swizzle_key . "<Plug>SwizzleChar"
 " }}}

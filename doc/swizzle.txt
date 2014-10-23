@@ -48,13 +48,11 @@ the cursor position):
 ==============================================================================
 OPTIONS                                                        *swizzle-options*
 
-                                                         *g:swizzle_no_mappings*
-Overrides the default mappings provided by this plugin. Default: 0. Example: >
-  let g:swizzle_no_mappings = 1
+                                                            *g:swzl_swizzle_key*
+Specifies the key to swizzle the character under the cursor. Default: `'gs'`.
+Example: >
+  let g:swzl_swizzle_key = 'cs'
 <
-You can then define your own mapping. Example: >
-  nmap cs <Plug>SwizzleChar
-
 Note: 'cs' sounds like a good mapping (character swizzle), but surround.vim 
 took that one. Early birds, and all that.
 

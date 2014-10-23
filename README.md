@@ -28,8 +28,7 @@ Don't forget to update the help with: `:helptags`
 
 You can remove or override the default mapping with:
 
-    let g:swizzle_no_mappings = 1
-    nmap YourMap <Plug>SwizzleChar
+    let g:swzl_swizzle_key = 'YourMap'
 in your `.vimrc`.
 
 You can also override the default swizzle sequences with:
