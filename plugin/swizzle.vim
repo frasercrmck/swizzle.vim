@@ -16,6 +16,6 @@ nnoremap <silent> <Plug>SwizzleChar :<C-U>call swizzle#Swizzle(v:count)<CR>
                                     \:silent! call repeat#set("\<Plug>SwizzleChar", v:count)<CR>
 
 if !exists("g:swizzle_no_mappings") || !g:swizzle_no_mappings
-  nmap gs <Plug>SwizzleChar
+  nnoremap gs <Plug>SwizzleChar
 endif
 " }}}
