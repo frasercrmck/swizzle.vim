@@ -17,5 +17,5 @@ nnoremap <silent> <Plug>SwizzleChar :<C-U>call swizzle#Swizzle(v:count)<CR>
 
 let g:swzl_swizzle_key = get( g:, 'swzl_swizzle_key', 'gs' )
 
-execute "nmap <silent> " . g:swzl_swizzle_key . "<Plug>SwizzleChar"
+execute "nmap <silent> " . g:swzl_swizzle_key . " <Plug>SwizzleChar"
 " }}}
